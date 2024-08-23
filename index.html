@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+    <title>Document</title>
+</head>
+<body>
+  
+<div class="navbar">
+    <div class="logo">
+    <img src="./public/logo.webp" alt=""/>
+    </div>
+    <div class="links">
+        <a href="" class="link">Home</a>
+        <a href="" class="link">About</a>
+        <a href="" class="link">Services</a>
+        <a href="" class="link">Contact us</a>
+        <a href="" class="link active">Login</a>
+        <button class="link hidden" onclick="toggleLinks()"> Close </button>
+        <!-- Hamburger Icon -->
+      </div>
+      <div class="hamburger" id="navbarToggle" onclick="toggleLinks()">
+        &#9776;
+      </div>
+    </div>
+</div>
+
+<section class="section-container">
+    <div class="left">
+    <h1>Company Overview</h1>
+    <p>Create new capabilities and respond to technology needs of
+     tomorrow, today.</p>
+    </div>
+
+     <div class="image">
+        <img src="./public/Web-Design-PNG-Pic.png" alt=""/>
+     </div>
+</section>
+
+<section class="center">
+    <div class="header">
+    <h3>Overview</h3>
+    <p>Techizons is a software development & IT consulting partner to startups and scale-ups. We provide full-cycle development services to help businesses scale by using technology solutions, 
+        improving the customer experience, and creating new products and internal processes.</p>
+        
+    <h5>Techizons helps businesses ascend to the pinnacle of success with technology.</h5>
+    </div>
+
+</section>
+
+<section class="card-container">
+    <div class="card1">
+    <h6>68%</h6>
+    <p>of the company's revenue comes from Digital Marketing</p>
+    </div>
+
+    <div class="card2">
+    <h6>100+</h6>
+    <P>successfully delivered projects to customers</P>
+    </div>
+
+    <div class="card3">
+    <h6>78%</h6>
+    <p>company's annual growth rate</p>
+     </div>
+    <div class="card4">
+        <h6>5+</h6> 
+        <p>years full-cycle development experience</p>  
+    </div>
+
+</section>
+
+<section class="content">
+    <div>
+        <h2>Our Strength</h2><hr>
+    </div>
+    
+    <div class="box">
+    <img src="./public/office.webp" alt""/>
+    </div>
+
+   
+    <div class="box-row">
+    <div class="box1">
+        <h3>Deep understanding of your product 
+           and niche features</h3>
+        <p>years full-cycle development experienceSince we have in- house subject matter experts and domain expertise, we introduce time
+        that is needed to make the team onboarded</p>
+       </div>
+
+       <div class="box2">
+        <h3>A stable product is ensured by
+        </h3>
+        <p>Picking the application architecture and technologies that are most suitable for the product. Conducting a variety of tests during the software development
+         life cycle, and carrying out load testing</p>
+       </div>
+
+
+       <div class="box3">
+        <h3>Commitment to Product-Market Fit</h3>
+        <p>Our Implementation of the Design Thinking methodology allows us to target and achieve 
+            a product-market match</p>
+       </div>
+
+       
+
+       <div class="box4">
+        <h3>Tracked Project Progress</h3>
+        <p>By using a high-level overview, flexible software development management methodologies (Agile & Scrum), and certified project managers, we carefully track every step 
+            of our projects to deliver on time and budget</p>
+       </div>
+    
+       <div class="box5">
+        <h3>Guarantee of the agreed budget</h3>
+        <p>We provide an approximate estimation of the cost,
+             ranging from minimum to maximum</p>
+       </div>
+
+    </div>
+
+</section>
+
+<div class="black">
+    <div class="left">
+    <h2>From Our Community</h2>
+    <p>Here's What Other Clients had to say about our work and services</p>
+</div>
+
+<div class="right">
+    <div class="slider">
+        <div class="slides">
+            <p class="review active">Techizons provide highly competitive rates for their SEO services, and I would give them an A grade for their exceptional quality of work.</p>
+            <p class="review">Techizons is the best. I am so happy with their services.</p>
+            <p class="review">I have worked with Techizons for over two years on web and app development. They provide easy communication and
+                 consultation on ideas.</p>
+            <p class="review">Techizons have very reasonable charges, and I want to give them an A+ for their quality of work.</p>
+        </div>
+    </div>
+    
+    <div class="navigation">
+        <span id="prev-btn">&larr; Previous</span>
+        <span id="next-btn">Next &rarr;</span>
+    </div>
+
+   </div>
+   </div>
+<div class="footer">
+    <div>
+    <img src="./public/logo.webp" alt""/>
+</div>
+<div class="line">
+    <a href="">About</a>
+    <a href="">Services</a>
+    <a href="">Contact us</a>
+    <a href="">Privacy Policy</a>
+    <a href="">FAQ</a>
+    <a href="">Terms & condition</a>
+</div>
+<div class="socials">
+<h2>Social Links</h2>
+<div class="icons">
+    <i class="bx bxl-twitter"></i>
+    <i class="bx bxl-instagram"></i>
+    <i class="bx bxl-facebook" ></i>
+     
+  </div>
+</div>
+
+
+</div>
+
+
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const slides = document.querySelector('.slides');
+        const reviews = document.querySelectorAll('.review');
+        const nextButton = document.getElementById('next-btn');
+        const prevButton = document.getElementById('prev-btn');
+        let currentIndex = 0;
+        const slideInterval = 3000; // Interval time in milliseconds
+    
+        function updateSlidePosition() {
+            slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+    
+        function showNextReview() {
+            currentIndex = (currentIndex + 1) % reviews.length;
+            updateSlidePosition();
+        }
+    
+        function showPrevReview() {
+            currentIndex = (currentIndex - 1 + reviews.length) % reviews.length;
+            updateSlidePosition();
+        }
+    
+        // Initialize the first review as visible
+        updateSlidePosition();
+    
+        // Add event listeners to the navigation controls
+        nextButton.addEventListener('click', showNextReview);
+        prevButton.addEventListener('click', showPrevReview);
+    
+        // Automatic sliding
+        setInterval(showNextReview, slideInterval);
+    });
+    
+</script>
+<script>
+    const toggleLinks = () => {
+      const links = document.querySelector(".links");
+      links.classList.toggle("active");
+    };
+  </script>
+
+
+
+</body>
+</html>
